@@ -14,7 +14,7 @@ def index():
         
         date_o = dt(int(date[0:4]), int(date[5:7]), int(date[8:]))
 
-        response = getter.get(date, time)
+        response = getter.get(date_o, time)
         
         return render_template("results.html", response=response)
 
