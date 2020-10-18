@@ -5,7 +5,9 @@ Kovidtrafik | HackGT 2020
 {% endblock %}
 
 {% block main %}
+<div class="rowwise">
 <h2>Get covid-era traffic predictions in Atlanta!</h2><br><br>
+</div>
 <form class="form" action="/success" method="POST">
     <div class="label" id="box">Date:</div>
     <div><input type="date" placeholder="dd/mm/yyyy" name="inputdate" min="{{ now.date().isoformat() }}" max="{{ max.date().isoformat() }}"></div>
