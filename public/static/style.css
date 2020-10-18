@@ -27,7 +27,7 @@ html, body
     height: 40px;
     width: 100%;
     text-align: center;
-    color: white;
+    color: black;
 }
 
 .main
@@ -45,7 +45,7 @@ html, body
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    color: white;
+    color: black;
 }
 
 .title
@@ -62,6 +62,6 @@ html, body
 .nav-link
 {
     font-family: 'Indie Flower', cursive;
-    color: white;
+    color: black;
     font-size: 30px
 }
