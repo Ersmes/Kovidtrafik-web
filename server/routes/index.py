@@ -3,11 +3,15 @@ from flask import render_template
 
 @app.route('/')
 def hello_world():
-    return app.send_static_file('index.html')
+    return render_template('index.html')
 
 @app.route('/poo')
 def poo():
     return "pooooooo"
+
+@app.route('/about')
+def about():
+    return "about"
 
 @app.errorhandler(404)
 @app.route("/error404")

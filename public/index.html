@@ -1,42 +1,18 @@
-<!DOCTYPE html>
+{% extends "master_layout.html" %}
 
-<html>
-<head>
-    <title>Kovidtrafik: HackGT 2020</title>
-</head>
-    <body>
-<header id="flex-header">
-    <div class="cloud-header"></div>
-    <h1>Congratulations!</h1>
-    <h2>You are currently running a Python app built for the IBM Cloud.</h2>
-</header>
-<main>
-    <ul>
-        <li>
-            <div class="right-arrow"></div>
-            <div>
-                <a target="_blank" rel="noopener" href="https://cloud.ibm.com/developer/appservice/dashboard?env_id=ibm%3Ayp%3Aus-south">Visit IBM Cloud App Service</a>
-            </div>
-        </li>
-        <li>
-            <div class="right-arrow"></div>
-            <div>
-                <a target="_blank" rel="noopener" href="https://slack-invite-ibm-cloud-tech.mybluemix.net/">Ask questions on Slack</a>
-            </div>
-        </li>
-        <li>
-            <div class="right-arrow"></div>
-            <div>
-                <a target="_blank" rel="noopener" href="https://www.ibm.com/cloud/cli">Install IBM Cloud Developer Tools</a>
-            </div>
-        </li>
-        <li>
-            <div class="right-arrow"></div>
-            <div>
-                <a target="_blank" rel="noopener" href="https://datascience.ibm.com/">Train a model with IBM Watson Studio</a>
-            </div>
-        </li>
-    </ul>
-</main>
-</body>
-</html>
+{% block title %}
+Kovidtrafik | HackGT 2020
+{% endblock %}
+
+{% block main %}
+
+<div>
+    <form action="http://kovidtrafik.us-south.cf.appdomain.cloud" method="post">
+        <p>Date:</p>
+        <p><input type="date" placeholder="dd/mm/yyyy" name="inputdate" min="{{current_date}}"></p>
+        <p><input type="time" placeholder="00:00" name="inputtime" step="3600000"></p>
+        <p><button type="button" class="btn btn-primary">Get Prediction</button></p>
+    </form>
+</div>
+
+{% endblock %}

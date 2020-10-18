@@ -1,0 +1,31 @@
+.wrapper
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar
+{
+    display: flex;
+    background: linear-gradient(180deg, #658aae, #8bc2b9);
+}
+
+.footer
+{
+    position: fixed;
+    bottom: 0;
+    background: linear-gradient(180deg, #8bc2b9, #658aae);
+    height: 30px;
+    width: 100%;
+}
+
+.title
+{
+    font-family: 'Comic Sans', sans-serif;
+    font-size: 48px;
+}
+
+.logo
+{
+    height: 60px;
+}
