@@ -4,7 +4,7 @@ from datetime import datetime
 from datetime import date as dt
 from datetime import time as tm
 
-import server.helpers.kovidtrafik as kovidtrafik
+import server.helpers.getter
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
@@ -12,9 +12,7 @@ def index():
         date = request.form["inputdate"]
         time = request.form["inputtime"]
         
-        date_o = dt(int(date[0:4]), int(date[5:7]), int(date[8:]))
-
-        response = kovidtrafik.model(date_o, tm(0))
+        response = getter.read(date, time)
         
         return render_template("results.html", response=response)
 
