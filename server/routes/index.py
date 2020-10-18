@@ -7,8 +7,6 @@ josh = np.zeros(5)
 
 import server.modeling as modeling
 
-app = Flask(__name__)
-
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
@@ -50,6 +48,3 @@ def page_not_found(error):
 @app.route("/error500")
 def requests_error(error):
     return app.send_static_file('500.html')
-
-if __name__ == "__main__":
-    app.run(debug=True)
