@@ -1,4 +1,3 @@
-from matplotlib import pyplot
 from statsmodels.tsa.arima_model import ARIMA, ARIMAResults
 from sklearn.metrics import mean_squared_error
 import server.helpers.preprocessing as pp
