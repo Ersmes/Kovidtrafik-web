@@ -2,6 +2,9 @@ from server import app
 from flask import Flask, render_template, request, flash, url_for, redirect
 from datetime import datetime
 
+import numpy as np
+josh = np.zeros(5)
+
 import server.modeling as modeling
 
 app = Flask(__name__)
@@ -15,10 +18,11 @@ def index():
         
         modeling.predict(time)
 
-        return redirect(url_for('success', name=date))
-    else:
+        return redirect(url_for("success", name="test"))
+    else: 
         now = datetime.now()
         max = datetime(now.year + 1, now.month, now.day)
+    
         return render_template('index.html', now=now, max=max)
 
 @app.route('/success/<name>')
