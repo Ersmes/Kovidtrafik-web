@@ -14,12 +14,23 @@ def index():
         
         render_template("results.html", response=response)
 
+<<<<<<< HEAD
+=======
+        return redirect(url_for("success", day=date, hour=time))
+>>>>>>> 0074039355196ea23dfcef4ad61b3066839fdb29
     else: 
         now = datetime.now()
         max = datetime(now.year + 1, now.month, now.day)
     
         return render_template('index.html', now=now, max=max)
 
+<<<<<<< HEAD
+=======
+@app.route('/success')
+def success(day, hour):
+    return f"<p>the result crap<p>"
+
+>>>>>>> 0074039355196ea23dfcef4ad61b3066839fdb29
 @app.route('/poo')
 def poo():
     return "pooooooo"
