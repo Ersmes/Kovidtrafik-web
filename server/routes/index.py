@@ -5,6 +5,10 @@ from flask import render_template
 def hello_world():
     return app.send_static_file('index.html')
 
+@app.route('/poo')
+def poo():
+    return "pooooooo"
+
 @app.errorhandler(404)
 @app.route("/error404")
 def page_not_found(error):
