@@ -12,7 +12,7 @@ def index():
         date = request.form["inputdate"]
         time = request.form["inputtime"]
         
-        response = getter.read(date, time)
+        response = getter.get(date, time)
         
         return render_template("results.html", response=response)
 
