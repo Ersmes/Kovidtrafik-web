@@ -22,7 +22,7 @@ def index():
 
 @app.route('/success/<name>')
 def success(name):
-    return "the result crap"
+    return f"<p>the result crap<p>"
 
 @app.route('/poo')
 def poo():
