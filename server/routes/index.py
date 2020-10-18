@@ -12,18 +12,21 @@ def index():
         date = request.form["inputdate"]
         time = request.form["inputtime"]
         
-        date_o = dt.date(date)
-        time_o = tm.time(time)
+        date_o = dt(int(date[0:4]), int(date[5:7]), int(date[8:]))
+
+        #response = kovidtrafik.model(date_o, tm(0))
         
-        response = kovidtrafik.model(date_o, time_o)
-        
-        render_template("results.html", response=response)
+        return redirect("/result")
 
     else: 
         now = datetime.now()
         max = datetime(now.year + 1, now.month, now.day)
     
         return render_template('index.html', now=now, max=max)
+
+@app.route('/result')
+def result():
+    return render_template("results.html", response="The traffic today is .25 times the normal.")
 
 @app.route('/poo')
 def poo():
