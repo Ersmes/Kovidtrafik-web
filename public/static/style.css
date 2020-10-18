@@ -19,6 +19,20 @@
     width: 100%;
 }
 
+.main
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .title
 {
     font-family: 'Comic Sans', sans-serif;
