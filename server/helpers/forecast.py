@@ -3,6 +3,8 @@ from sklearn.metrics import mean_squared_error
 import server.helpers.preprocessing as pp
 from server.helpers.arima import difference, inverse_difference
 
+from server.helpers.model import load_model
+
 def predict(hours):
     series = pp.get_data()
     X = series.values
@@ -10,6 +12,8 @@ def predict(hours):
     hours_in_week = 168
     validation = pp.get_validate()
     y = validation.values
+
+    load_model()
 
     model_fit = ARIMAResults.load('model.pkl')
 
