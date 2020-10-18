@@ -59,6 +59,11 @@ html, body
     height: 70px;
 }
 
+.result
+{
+    color: white;
+}
+
 .nav-link
 {
     font-family: 'Droid Sans';
