@@ -3,7 +3,7 @@ import numpy as np
 import datetime as dt
 
 def get(date, time):
-    hours = (date.month * 30 + date.day - 1) * 24 + time + 1
+    hours = (date.month * 30 + date.day - 1) * 24 + 1
 
     total_data = pd.read_csv("total_data.csv")
     average = total_data.mean()
