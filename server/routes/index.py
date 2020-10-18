@@ -1,18 +1,15 @@
 from server import app
 from flask import render_template, request, flash, url_for, redirect
 
-@app.route('/')
-def hello_world():
-    return render_template('index.html', current_date=8)
-
 @app.route('/', methods=['POST', 'GET'])
-def get_data():
+def index():
     if request.method == 'POST':
         date = request.form["inputdate"]
         time = request.form["inputtime"]
         flash("Processing Date and Time Inputs...")
         return redirect(url_for('success', name=date))
-    
+    return render_template('index.html', current_date=8)
+
 @app.route('/success/<name>')
 def success(name):
     return "the result crap"
