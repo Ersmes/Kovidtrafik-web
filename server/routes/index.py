@@ -3,7 +3,7 @@ from flask import render_template, request, flash, url_for, redirect
 from datetime import datetime
 
 import numpy as np
-josh = np.array(5)
+josh = np.zeros(5)
 
 import server.modeling as modeling
 
