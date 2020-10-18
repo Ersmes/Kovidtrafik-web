@@ -2,27 +2,23 @@ from server import app
 from flask import Flask, render_template, request, flash, url_for, redirect
 from datetime import datetime
 
-import server.modeling as modeling
+import server.helpers.kovidtrafik as kovidtrafik
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
         date = request.form["inputdate"]
         time = request.form["inputtime"]
-        flash("Processing Date and Time Inputs...")
         
-        modeling.predict(time)
+        response = kovidtrafik.model(date, time)
+        
+        render_template("results.html", response=response)
 
-        return redirect(url_for("success", name="test"))
     else: 
         now = datetime.now()
         max = datetime(now.year + 1, now.month, now.day)
     
         return render_template('index.html', now=now, max=max)
-
-@app.route('/success/<name>')
-def success(name):
-    return f"<p>the result crap<p>"
 
 @app.route('/poo')
 def poo():

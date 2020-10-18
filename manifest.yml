@@ -1,5 +1,5 @@
 applications:
-- buildpack: https://github.com/heroku/heroku-buildpack-python.git
+- buildpack: python_buildpack
   command: python manage.py start 0.0.0.0:$PORT
   domain: null
   env:
