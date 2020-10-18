@@ -1,5 +1,8 @@
 from server import app
 from flask import render_template, request, flash, url_for, redirect
+from datetime import datetime
+
+import server.modeling as modeling
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
@@ -7,8 +10,13 @@ def index():
         date = request.form["inputdate"]
         time = request.form["inputtime"]
         flash("Processing Date and Time Inputs...")
+        
+        modeling.predict(time)
+
         return redirect(url_for('success', name=date))
-    return render_template('index.html', current_date=8)
+
+    now = datetime.now()
+    return render_template('index.html', now=now)
 
 @app.route('/success/<name>')
 def success(name):
