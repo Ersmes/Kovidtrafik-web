@@ -1,8 +1,10 @@
 from server import app
-from flask import render_template, request, flash, url_for, redirect
+from flask import Flask, render_template, request, flash, url_for, redirect
 from datetime import datetime
 
 import server.modeling as modeling
+
+app = Flask(__name__)
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
@@ -44,3 +46,6 @@ def page_not_found(error):
 @app.route("/error500")
 def requests_error(error):
     return app.send_static_file('500.html')
+
+if __name__ == "__main__":
+    app.run(debug=True)
