@@ -3,7 +3,7 @@ from flask import render_template
 
 @app.route('/')
 def hello_world():
-    return render_template('index.html')
+    return render_template('index.html', current_date=8)
 
 @app.route('/poo')
 def poo():
@@ -11,7 +11,11 @@ def poo():
 
 @app.route('/about')
 def about():
-    return "about"
+    return render_template("about.html")
+
+@app.route('/predict', methods=["POST"])
+def predict():
+    return "prediction"
 
 @app.errorhandler(404)
 @app.route("/error404")

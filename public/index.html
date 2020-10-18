@@ -6,8 +6,8 @@ Kovidtrafik | HackGT 2020
 
 {% block main %}
 
-<div>
-    <form action="http://kovidtrafik.us-south.cf.appdomain.cloud" method="post">
+<div class="">
+    <form action="/predict" method="post">
         <p>Date:</p>
         <p><input type="date" placeholder="dd/mm/yyyy" name="inputdate" min="{{current_date}}"></p>
         <p><input type="time" placeholder="00:00" name="inputtime" step="3600000"></p>
