@@ -5,14 +5,12 @@ Kovidtrafik | HackGT 2020
 {% endblock %}
 
 {% block main %}
-
-<div class="form">
-    <form action="/predict" method="post">
-        <p>Date:</p>
-        <p><input type="date" placeholder="dd/mm/yyyy" name="inputdate" min="{{current_date}}"></p>
-        <p><input type="time" placeholder="00:00" name="inputtime" step="3600000"></p>
-        <p><button type="button" class="btn btn-primary">Get Prediction</button></p>
-    </form>
-</div>
+ 
+<form class="form" action="/predict" method="post">
+    <div>Date:</div>
+    <div><input type="date" placeholder="dd/mm/yyyy" name="inputdate" min="{{current_date}}"></div>
+    <div><input type="time" placeholder="00:00" name="inputtime" step="3600000"></div>
+    <div><button type="button" class="btn btn-primary">Get Prediction</button></div
+</form>
 
 {% endblock %}
