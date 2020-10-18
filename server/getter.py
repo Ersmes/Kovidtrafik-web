@@ -5,7 +5,7 @@ import datetime as dt
 def get(date, time):
     start = dt.date(2020, 8, 30)
     delta = date - start
-    hours = delta.days * 24 
+    hours = delta.days * 24 + time.hour + 1
 
     total_data = pd.read_csv("predictions.csv")
     predicted_series = pd.Series(total_data.iloc[:,0])

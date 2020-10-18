@@ -12,15 +12,19 @@ def index():
         date = request.form["inputdate"]
         time = request.form["inputtime"]
         
-        date_o = dt(int(date[0:4]), int(date[5:7]), int(date[8:]))
+        if date == '' or time == '':
+            return redirect('/')
 
-        response = getter.get(date_o, time)
+        date_o = dt(int(date[0:4]), int(date[5:7]), int(date[8:]))
+        time_o =  tm(hour=int(time[:2]))       
+
+        response = getter.get(date_o, time_o)
         
         return render_template("results.html", response=response)
 
     else: 
         now = datetime.now()
-        max = datetime(now.year + 1, now.month, now.day)
+        max = datetime(2020, 12, 31)
     
         return render_template('index.html', now=now, max=max)
 
@@ -31,10 +35,6 @@ def poo():
 @app.route('/about')
 def about():
     return render_template("about.html")
-
-@app.route('/predict', methods=["POST"])
-def predict():
-    return "prediction"
 
 @app.errorhandler(404)
 @app.route("/error404")
