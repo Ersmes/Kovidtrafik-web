@@ -13,15 +13,15 @@ def index():
         
         modeling.predict(time)
 
-        return redirect(url_for("success", name="test"))
+        return redirect(url_for("success", day=date, hour=time))
     else: 
         now = datetime.now()
         max = datetime(now.year + 1, now.month, now.day)
     
         return render_template('index.html', now=now, max=max)
 
-@app.route('/success/<name>')
-def success(name):
+@app.route('/success')
+def success(day, hour):
     return f"<p>the result crap<p>"
 
 @app.route('/poo')
