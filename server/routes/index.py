@@ -16,7 +16,9 @@ def index():
         return redirect(url_for('success', name=date))
 
     now = datetime.now()
-    return render_template('index.html', now=now)
+
+    max = datetime(now.year + 1, now.month, now.day)
+    return render_template('index.html', now=now, max=max)
 
 @app.route('/success/<name>')
 def success(name):
