@@ -2,6 +2,9 @@ from server import app
 from flask import render_template, request, flash, url_for, redirect
 from datetime import datetime
 
+import numpy as np
+josh = np.array(5)
+
 import server.modeling as modeling
 
 @app.route('/', methods=['POST', 'GET'])
