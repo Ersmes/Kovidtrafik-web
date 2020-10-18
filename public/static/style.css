@@ -52,3 +52,10 @@
 {
     height: 70px;
 }
+
+.nav-link
+{
+    font-family: 'Indie Flower', cursive;
+    color: white;
+    font-size: 30px
+}
