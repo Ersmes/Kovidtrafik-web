@@ -4,7 +4,7 @@ from datetime import datetime
 from datetime import date as dt
 from datetime import time as tm
 
-import server.helpers.getter
+import server.getter as getter
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
