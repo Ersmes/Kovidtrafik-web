@@ -2,8 +2,8 @@ import warnings
 import numpy as np
 import pandas as pd
 import datetime as dt
-import preprocessing as pp
-from forecast import predict
+import server.helpers.preprocessing as pp
+from server.helpers.forecast import predict
 
 warnings.filterwarnings("ignore")
 series = pp.get_total()

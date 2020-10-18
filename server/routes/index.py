@@ -1,6 +1,8 @@
 from server import app
 from flask import Flask, render_template, request, flash, url_for, redirect
 from datetime import datetime
+from datetime import date as dt
+from datetime import time as tm
 
 import server.helpers.kovidtrafik as kovidtrafik
 
@@ -10,7 +12,10 @@ def index():
         date = request.form["inputdate"]
         time = request.form["inputtime"]
         
-        response = kovidtrafik.model(date, time)
+        date_o = dt.date(date)
+        time_o = tm.time(time)
+        
+        response = kovidtrafik.model(date_o, time_o)
         
         render_template("results.html", response=response)
 
